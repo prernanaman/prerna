@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4 Solution</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>JavaScript Greetings</h1>
+    <p>Open the browser console to see the output.</p>
+</body>
+</html>
+
+(function() {
+    var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+    var helloSpeaker = {};
+    var byeSpeaker = {};
+
+    helloSpeaker.speak = function(name) {
+        console.log("Hello " + name);
+    };
+
+    byeSpeaker.speak = function(name) {
+        console.log("Goodbye " + name);
+    };
+
+    for (var i = 0; i < names.length; i++) {
+        var firstLetter = names[i].charAt(0).toLowerCase();
+        if (firstLetter === 'j') {
+            byeSpeaker.speak(names[i]);
+        } else {
+            helloSpeaker.speak(names[i]);
+        }
+    }
+})();
